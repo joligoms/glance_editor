@@ -1,0 +1,148 @@
+{
+    "en": {
+        "appSettings": {
+            "settingsMenu": {
+                "appearance": "Appearance",
+                "language": "Language"
+            },
+            "settingsOptions": {
+                "appearance": {
+                    "title": "Theme",
+                    "label": "Dark Mode"
+                },
+                "language": {
+                    "title": "Language"
+                }
+            }
+        },
+        "menubar": {
+            "bttNewFile": {
+                "title": "Create new instance",
+                "subtitle": "This action creates another instance (window) of the text editor."
+            },
+            "bttOpenFile": {
+                "title": "Open File",
+                "subtitle": "Pops up a file dialog to choose the file to be opened and appended to the text editor."
+            },
+            "bttSaveFile": {
+                "title": "Save File",
+                "subtitle": "Pops up a file dialog to choose for the location of file to be written into."
+            }
+        },
+        "toolbar": {
+            "bttUndo": {
+                "title": "Undo Button",
+                "subtitle": "Undo your previous actions on the text editor by clicking this button."
+            },
+            "bttRedo": {
+                "title": "Redo Button",
+                "subtitle": "Redo your undone actions on the text editor by clicking this button."
+            },
+            "bttCopy": {
+                "title": "Copy Button",
+                "subtitle": "It copies the selected text to clipboard."
+            },
+            "bttCut": {
+                "title": "Cut Button",
+                "subtitle": "It copies the selected text to clipboard and deletes it."
+            },
+            "bttPaste": {
+                "title": "Paste Button",
+                "subtitle": "It pastes copied text in the cursor position"
+            },
+            "bttSelectWord": {
+                "title": "Select Word Button",
+                "subtitle": "Selects the word found in the cursor position."
+            },
+            "bttSelectAll": {
+                "title": "Select All Button",
+                "subtitle": "Selects the whole text inside the text editor."
+            },
+            "bttSelectLine": {
+                "title": "Select Line Button",
+                "subtitle": "Select the whole line found in the cursor position"
+            },
+            "bttHelpButton": {
+                "title": "Help Button",
+                "subtitle": "When clicked, the next clicked button will show a description of itself."
+            }
+        },
+        "footer": {
+            "title": "Grammar Picker",
+            "subtitle": "Chooses and displays the programming language grammar of the file."
+        }
+    },
+    "pt": {
+        "appSettings": {
+            "settingsMenu": {
+                "appearance": "Aparência",
+                "language": "Idioma"
+            },
+            "settingsOptions": {
+                "appearance": {
+                    "title": "Tema do programa",
+                    "label": "Modo nocturno"
+                },
+                "language": {
+                    "title": "Idioma"
+                }
+            }
+        },
+        "menubar": {
+            "bttNewFile": {
+                "title": "Criar nova instância",
+                "subtitle": "Esta ação cria outra instância (janela) do editor de texto. "
+            },
+            "bttOpenFile": {
+                "title": "Abrir ficheiro",
+                "subtitle": "Abre uma caixa de diálogo para escolher o ficheiro a ser aberto e anexado ao editor de texto."
+            },
+            "bttSaveFile": {
+                "title": "Guardar ficheiro",
+                "subtitle": "Abre uma caixa de diálogo para escolher a pasta/ficheiro a ser escolhido para ser escrito."
+            }
+        },
+        "toolbar": {
+            "bttUndo": {
+                "title": "Botão de Desfazer",
+                "subtitle": "Desfaça suas ações anteriores no editor de texto a clicar neste botão."
+            },
+            "bttRedo": {
+                "title": "Botão de Refazer",
+                "subtitle": "Refaça suas ações desfeitas no editor a clicar neste botão."
+            },
+            "bttCopy": {
+                "title": "Botão de copiar",
+                "subtitle": "Quando clicado, este copia a selacão feitar para a àrea de transferência, para posteriormente ser colado."
+            },
+            "bttCut": {
+                "title": "Botão de cortar",
+                "subtitle": "Copiar uma seleção de um texto selecionado e logo em seguida remove-na"
+            },
+            "bttPaste": {
+                "title": "Botão de colar",
+                "subtitle": "Cola o texto copiado na posição do cursor do rato."
+            },
+            "bttSelectWord": {
+                "title": "Botão de Selecionar Palavra",
+                "subtitle": "Seleciona apenas uma palavra encontrada na posição atual do cursor"
+            },
+            "bttSelectAll": {
+                "title": "Botão de Selecionar Tudo",
+                "subtitle": "Seleciona todo o texto ."
+            },
+            "bttSelectLine": {
+                "title": "Botão de Selecionar Linha",
+                "subtitle": "Selecionar uma linha inteira que estiver na mesma posição que o"
+            },
+            "bttHelpButton": {
+                "title": "Botão de Ajuda",
+                "subtitle": "Quando clicado, poderá clicar em outro botão para mostrar a sua devida descrição."
+            }
+        },
+        "footer": {
+            "title": "Seletor de gramática",
+            "subtitle": "Menu para escolher a gramática da linguagem de programação a ser utilizada."
+        }
+    }
+}

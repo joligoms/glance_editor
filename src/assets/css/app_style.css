@@ -1,0 +1,478 @@
+@import 'font-awesome/css/all.css';
+@import '../../../node_modules/codemirror/lib/codemirror.css';
+@import '../../../node_modules/codemirror/theme/base16-light.css';
+@import '../../../node_modules/codemirror/theme/base16-dark.css';
+@import '../../../node_modules/codemirror/addon/scroll/simplescrollbars.css';
+
+@font-face {
+  font-family: 'Cantarell';
+  src: url('Cantarell-Bold.ttf') format('truetype'),
+       url('Cantarell-BoldItalic.ttf') format('truetype'),
+       url('Cantarell-Italic.ttf') format('truetype'),
+       url('Cantarell-Regular.ttf') format('truetype'),
+}
+
+/* @import '../../codemirror/addon/hint/show-hint.css';
+
+@import '../../codemirror/theme/base16-dark.css';
+@import '../../codemirror/theme/base16-light.css';
+@import '../../codemirror/addon/scroll/simplescrollbars.css'; */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#glance_editor {
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+}
+
+:not(.fa, main){
+  font-family: 'Cantarell', sans-serif;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+#menu_bar {
+  border-bottom: 1px solid rgb(16, 16, 16);
+  padding: 10px;
+}
+
+  #menu_bar button {
+    border: none;
+    font-size: 25px;
+    margin: 0px 5px;
+    padding: 10px 15px;
+    border-radius: 10px;
+  }
+
+  #menu_bar button:hover {
+    transition: 0.4s;
+  }
+
+  #menu_bar button:active {
+    animation: menubarClickAnimation 0.4s;
+  }
+
+  #menu_bar button:last-child {
+    float: right;
+  }
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: calc(100vh - 118px);
+}
+
+#toolbar {
+  border-right: 1px solid rgb(16, 16, 16);
+  padding: 10px;
+  width: 60px;
+  order: 1;
+}
+
+  #toolbar button {
+    border: none;
+    font-size: 25px;
+    margin: 0px 5px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 50px;
+    border: 1px solid rgb(16, 16, 16);
+    margin: 5px;
+    box-shadow: 0px 0px 8px -10px black;
+  }
+
+  #toolbar button:hover {
+    background-color: rgb(21, 21, 21);
+    transition: 0.4s;
+  }
+
+  #toolbar button:active {
+    animation: menubarClickAnimation 0.4s;
+  }
+
+.CodeMirror {
+  width: 100%;
+  height: 100%;
+  order: 2;
+  font-family: monospace;
+}
+
+.CodeMirror:not(.CodeMirror-focused) .CodeMirror-cursors {
+  visibility: visible !important;
+}
+
+#scrollup {
+  position: absolute;
+  left: 50%;
+  z-index: 50;
+  top: 73px;
+  opacity: 60%;
+  border-radius: 60% !important;
+  border: none;
+}
+#scrollup:hover {
+  opacity: 80%;
+}
+#scrolldown {
+  position: absolute;
+  left: 50%;
+  z-index: 50;
+  bottom: 51px;
+  opacity: 60%;
+  border-radius: 60% !important;
+  border: none;
+}
+#scrollup:hover {
+  opacity: 80%;
+}
+
+#footer {
+  border-top: 1px solid;
+  display: inline-block;
+  width: 100%;
+}
+
+  #footer button {
+    padding: 10px;
+    border: none;
+    font-size: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    float: right;
+  }
+
+#bttGrammar {
+  text-transform: uppercase;
+}
+
+#dialog {
+  z-index: 200;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+  #frame_settings_dialog {
+    border-radius: 15px;
+    margin: 100px auto;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    min-width: 500px;
+    min-height: 300px;
+  }
+
+    #settings_menu {
+      border-radius: 15px 0px 0px 15px;
+      border-right: 1px solid rgb(8, 6, 6);
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      flex-grow: 1;
+    }
+      #settings_menu li{
+        padding: 20px;
+        cursor: pointer;
+        border-radius: inherit;
+      }
+
+    #settings_options {
+      border-radius: 0px 15px 15px 0px;
+      flex-grow: 5;
+      padding: 10px 20px;
+    }
+
+      #settings_options #buttonOK_settings_dialog {
+        padding: 15px 20px;
+        border-radius: 10px;
+        border: none;
+        position: relative;
+        float: right;
+        top: 210px;
+        right: 20px;
+      }
+
+      #settings_options button:not(#buttonOK_settings_dialog) {
+        padding: 15px;
+      }
+
+  #frame_grammar_dialog {
+    border-radius: 15px;
+    margin: 100px auto;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    min-width: 300px;
+    heigth: 50%;
+    border-right: 1px solid rgb(8, 6, 6);
+  }
+    #frame_grammar_dialog ul {
+      list-style-type: none;
+      padding: 0;
+      width: 100%;
+      text-align: center;
+    }
+    #frame_grammar_dialog li {
+      padding:8px;
+      margin: 0;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 800;
+    }
+    #frame_grammar_dialog #active_mode {
+      background-color: rgb(12, 12, 12);
+    }
+      #frame_grammar_dialog li:hover {
+        transition: 0.5s;
+      }
+
+#dialog_help {
+  z-index: 200;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+  #dialog_help #frame {
+    border-radius: 15px;
+    margin: 100px auto;
+    align-self: center;
+    min-width: 500px;
+    min-height: 350px;
+    border-right: 1px solid rgb(8, 6, 6);
+    padding: 30px;
+    text-align: center;
+  }
+
+  #dialog_help #frame span {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+
+  #dialog_help #frame p {
+    text-align: justify;
+    margin: 0px 30px;
+  }
+
+  #dialog_help #frame #buttonOK {
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    margin-top: 60px;
+    bottom: -60px;
+  }
+
+
+
+
+.dark_theme #menu_bar {
+  background-color: rgb(18, 18, 18);
+}
+  .dark_theme #menu_bar button {
+    color: white;
+    background-color: inherit;
+  }
+  .dark_theme #menu_bar button:hover {
+    background-color: rgb(21, 21, 21);
+  }
+.dark_theme #toolbar {
+  background-color: rgb(21, 21, 21);
+}
+  .dark_theme #toolbar button {
+    color: rgb(226, 212, 166);
+    background-color: rgb(30, 30, 30);
+  }
+  .dark_theme #toolbar button:hover {
+    background-color: rgb(21, 21, 21);
+  }
+  .dark_theme .CodeMirror-simplescroll-vertical{
+    background-color: inherit;
+    width: 15px;
+  }
+
+.dark_theme .CodeMirror-simplescroll-vertical div{
+  background-color: rgb(11, 10, 10);
+  border: none;
+  border-radius: 10px;
+}
+
+.dark_theme #footer {
+  background-color: rgb(18, 18, 18);
+  border-color: rgb(14, 14, 14);
+}
+  .dark_theme #footer button {
+    color: white;
+    background-color: inherit;
+  }
+
+.dark_theme #dialog {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+  .dark_theme #frame_settings_dialog {
+    color: white;
+  }
+
+  .dark_theme #settings_menu {
+    background-color: rgb(18, 18, 18);
+  }
+
+    .dark_theme #settings_menu li:hover {
+      background-color: rgb(10, 10, 10);
+    }
+
+    .dark_theme #settings_menu li:active {
+      background-color: rgb(21, 21, 21);
+    }
+
+    .dark_theme #settings_menu li:focus {
+      background-color: rgb(255, 0, 0);
+    }
+  .dark_theme #settings_options {
+    background-color: rgb(21, 21, 21);
+  }
+
+  .dark_theme #settings_options #buttonOK_settings_dialog {
+    background-color: rgb(29, 27, 27);
+    color: white;
+  }
+
+  .dark_theme #frame_grammar_dialog {
+    color: white;
+    background-color: rgb(18, 18, 18);
+  }
+
+  .dark_theme #frame_grammar_dialog li {
+    color: rgb(226, 219, 166);
+  }
+
+  .dark_theme #frame_grammar_dialog #active_mode {
+    background-color: rgb(12, 12, 12);
+  }
+  #frame_grammar_dialog li:hover {
+    background-color: rgb(12, 12, 12);
+  }
+.dark_theme #dialog_help {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+  .dark_theme #dialog_help #frame {
+    background-color: rgb(18, 18, 18);
+    color: white;
+  }
+
+
+.light_theme #menu_bar {
+  background-color: rgb(213, 212, 212);
+}
+  .light_theme #menu_bar button {
+    color: rgb(15, 15, 15);
+    background-color: inherit;
+  }
+  .light_theme #menu_bar button:hover {
+    background-color: rgba(180, 180, 180, 0.5);
+  }
+.light_theme #toolbar {
+  background-color: rgb(245, 245, 245);
+  border-right: 1px solid rgba(0,0,0,0.4)
+}
+  .light_theme #toolbar button {
+    color: rgb(232, 129, 93);
+    background-color: rgb(231, 228, 228);
+  }
+  .light_theme #toolbar button:hover {
+    background-color: rgb(180, 180, 180);
+  }
+
+.light_theme #footer {
+  background-color: rgb(213, 212, 212);
+  border-color: rgba(0,0,0,0.4);
+}
+  .light_theme #footer button {
+    color: black;
+    background-color: inherit;
+  }
+
+.light_theme #dialog {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+  .light_theme #frame_settings_dialog {
+    color: black;
+  }
+
+  .light_theme #settings_menu {
+    background-color: rgb(181, 181, 181);
+    border-left: 1px solid rgba(0,0,0,0.5)
+  }
+
+    .light_theme #settings_menu li:hover {
+      background-color: rgb(158, 153, 153);
+    }
+
+    .light_theme #settings_menu li:active {
+      background-color: rgb(149, 148, 148);
+    }
+
+    .light_theme #settings_menu li:focus {
+      background-color: rgb(149, 148, 148);
+    }
+  .light_theme #settings_options {
+    background-color: rgb(245, 245, 245);
+  }
+
+  .light_theme #settings_options #buttonOK_settings_dialog {
+    background-color: rgb(129, 129, 129);
+    color: black;
+  }
+
+  .light_theme #frame_grammar_dialog {
+    background-color: rgb(171, 171, 171);
+  }
+
+  .light_theme #frame_grammar_dialog li {
+    color: black;
+  }
+
+  .light_theme #frame_grammar_dialog #active_mode {
+    background-color: rgb(129, 129, 129);
+  }
+  #frame_grammar_dialog li:hover {
+    background-color: rgb(129, 129, 129);
+  }
+.light_theme #dialog_help {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.light_theme #dialog_help #frame {
+  background-color: rgb(181, 181, 181);
+  border-left: 1px solid rgba(0,0,0,0.5)
+}
+
+
+@keyframes menubarClickAnimation {
+  0% {background-color: rgb(21, 21, 21);}
+  50% {background-color: inherit;}
+  100% {background-color: rgb(21, 21, 21);}
+}
