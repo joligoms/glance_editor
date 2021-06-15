@@ -4,57 +4,57 @@
 
 *Read it in [English](README.md) 🇬🇧*
 
-Glance Editor is a Free and Open Source text editor designed for eye control users. People that only use their mouse to use the computer will be able to have most important functionalities by clicking the action buttons available in the program, without having to make control commands on the virtual keyboard.
+Glance Editor é um software livre e de código aberto projetado para utilizadores de rastreamento ocular. As pessoas que possui apenas a condição de utilizar um rato para controlar seu sistema operativo poderão ter as funcionalidades mais importantes para editar textos apenas com o simples clique nos botões de ação disponíveis pelo programa, sem ter a necessidade de utilizar os comandos no teclado virtual.
 
-![Dark Theme](/docs/img/dark_mode.png)
+![Modo Escuro](/docs/img/dark_mode.png)
 
-## Action buttons
+## Botões de ação
 
-The action buttons shown bellow are respectively:
-1. Undo
-2. Redo
-3. Copy
-4. Cut
-5. Paste
-6. Select a word
-7. Select all
-8. Select a whole line
-9. Help button
+Os botões de ação mostrados abaixo representam respetivamente:
 
-![Action Buttons Demonstration](/docs/img/img_action_buttons.png)
+1. Desfazer
+2. Refazer
+3. Copiar
+4. Cortar
+5. Colar
+6. Selecionar uma palavra
+7. Selecionar tudo
+8. Selecionar uma linha inteira
+9. Ajuda
 
-If you click on the help button, and then click on any other button on the program, a dialog will pop-up and show it's description as showed above.
+![Demostração dos botões de ação](/docs/img/img_action_buttons.png)
+
+Se clicar no botão de ajuda, e em seguida clicar em outro botão do programa, aparecerá uma descrição do botão clicado.
+
+![Demostração do botão de ajuda](/docs/img/help_button_demostration.gif)
 
 
-![Help Button Demonstration](/docs/img/help_button_demostration.gif)
+## Rolagem de texto
 
+Para rolar para cima e para baixo, pode ser utilizada a barra de rolagem da forma tradicional.
 
-## Text scrolling
+No entanto, existe um **campo de rolagem** onde, quando é passado o rato por cima deste campo, é efetuada a rolagem para cima ou para baixo sem necessitar de fazer um gesto de rolagem com o rato, como mostrado abaixo.
 
-To scroll up or down you can use the sidebar on the right, but this is the traditional way.
+![Demostração de rolagem](/docs/img/scroll_demonstration.gif)
 
-When you hover the **scroll spaces**, as shown bellow, you can scroll up and down easily, without making any drag or roll gesture with the mouse.
+## Temas
 
-![Scrolling Demonstration](/docs/img/scroll_demonstration.gif)
+O Glance Editor possui dois temas: o Modo Escuro e o Modo Claro.
+É possível alterar os temas a partir do botão de configuração que se encontra no canto superior direito.
 
-## Themes
+![Modo Escuro](/docs/img/dark_mode.png)
+![Modo Claro](/docs/img/light_mode.png)
 
-Glance Editor has two themes: Dark Mode (default) and Light Mode.
-You can change it on the configuration button at the top right corner.
+## Estado atual do projeto
 
-![Dark Theme](/docs/img/dark_mode.png)
-![Light Theme](/docs/img/light_mode.png)
+O que é preciso ser feito ainda? Efetivamente, muitas coisas...
+Mesmo que possa-se utilizar o Glance Editor neste momento, existem ainda alguns problemas que devo considerar a serem resolvidos para que este programa torne-se mais útil. Uma vez que ainda sou bastante novo na área de desenvolvimento Web, eu ainda estou - e planeio - em trabalhar nestes problemas para que as pessoas que o necessitam possam usufruí-lo.
 
-## Project Status
-
-What it still needs to be done? Actually, lot's of things...
-Even though you can use Glance Editor at this moment, there are still some problems I need to solve for it to be more useful. Since I am still very new in web development, I am still working / planning to work on this project to help people with what I think it's important.
-
-- [ ] Rethink the code structure and write clean code (and probably use a JS Framework like VueJS). **Very important**
-- [ ] Implement a file explorer panel
-- [ ] Implement tabs
-- [ ] Implement snippets and custom snippets creation and other utilities
-- [ ] Use new Electron's new security philosophies (even though Glance Editor don't use any external source, so it's probably not a big deal)
-- [ ] Write a better font and theme integration (and also make the default themes look more "attractive")
-- [ ] Make a welcome dialog where the user will be able make some configurations on the fly
-- [ ] Make better and more featured settings system
+- [ ] Repensar na estrutura do código e escrever *clean code* (e provavelmente utilizar uma framework em javascript, como o VueJS). **Muito importante.**
+- [ ] Implementar um painel de explorador de ficheiros
+- [ ] Implementar abas
+- [ ] Implementar excertos de código e excertos customizáveis, também como outras utilizades.
+- [ ] Utilizar as novas filosofias de segurança do Electron (mesmo que o Glance Editor não utilize nenhuma fonte externa para funcionar, portanto provavelmente não é algo muito importante...)
+- [ ] Implementar uma melhor integração de temas e fontes (e também melhorar a a parência dos temas incluídos)
+- [ ] Criar uma janela de boas-vindas, onde o utilizador possa fazer algumas configurações logo na primeira utilização do programa.
+- [ ] Criar um sistema de configurações melhor e com mais funcionalidades
