@@ -6,6 +6,8 @@
 
 Glance Editor is a Free and Open Source text editor designed for eye control users. People that only use their mouse to use the computer will be able to have most important functionalities by clicking the action buttons available in the program, without having to make control commands on the virtual keyboard.
 
+![Dark Theme](/docs/img/dark_mode.png)
+
 ## Action buttons
 
 The action buttons shown bellow are respectively:
